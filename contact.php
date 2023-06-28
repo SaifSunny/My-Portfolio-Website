@@ -57,7 +57,14 @@
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
                                 <a href="resume.php" aria-current="page" data-hover="1">Resume</a>
                             </li>
-
+                            <li id="menu-item-174"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
+                                <a href="portfolio.php" aria-current="page" data-hover="1">Portfolio</a>
+                            </li>
+                            <li id="menu-item-174"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
+                                <a href="blog.php" aria-current="page" data-hover="1">Blog</a>
+                            </li>
                             <li id="menu-item-174"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
                                 <a href="contact.php" aria-current="page" data-hover="1">Contact</a>

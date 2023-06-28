@@ -38,7 +38,7 @@
 
                     <!-- Text Logo -->
                     <div class="text-logo">
-                        <a href="index.php\">
+                        <a href="index.php">
                             <div class="logo-symbol">P</div>
                             <div class="logo-text">Portfoilio<span>.</span></div>
                         </a>
@@ -49,16 +49,24 @@
                     <!-- Navigation -->
                     <div class="site-nav mobile-menu-hide">
                         <ul id="menu-classic-menu" class="leven-classic-menu site-main-menu">
-                            <li id="menu-item-174"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
+                            <li
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item current-menu-item">
                                 <a href="#home" aria-current="page" data-hover="1">Home</a>
                             </li>
-                            <li id="menu-item-174"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
+                            <li 
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item current-menu-item">
                                 <a href="resume.php" aria-current="page" data-hover="1">Resume</a>
                             </li>
-                            <li id="menu-item-174"
+                            <li 
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
+                                <a href="portfolio.php" aria-current="page" data-hover="1">Portfolio</a>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
+                                <a href="blog.php" aria-current="page" data-hover="1">Blog</a>
+                            </li>
+                            <li 
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item current-menu-item">
                                 <a href="contact.php" aria-current="page" data-hover="1">Contact</a>
                             </li>
                         </ul>
@@ -82,10 +90,10 @@
                                             <div class="fw-container">
                                                 <div class="row">
                                                     <div class=" col-xs-12 col-sm-12 ">
-                                                        <div id="col_inner_877489360620b3037fc9b064f63a7372"
+                                                        <div id="col_inner"
                                                             class="fw-col-inner" data-paddings="15px 0px 15px 0px">
 
-                                                            <div id="home_content_954218bfd87cb3b458721f4a70135965"
+                                                            <div id="home_content"
                                                                 class="home-content">
                                                                 <div class="row flex-v-align">
 
@@ -104,10 +112,10 @@
                                                                                         id="subtitle"></span>
                                                                                 </p>
                                                                                 <div class="home-buttons">
-                                                                                    <a href="" target="_blank" id=""
+                                                                                    <a href="" target="_blank"
                                                                                         class="btn btn-primary">Download
                                                                                         CV</a>
-                                                                                    <a href="" target="_self" id=""
+                                                                                    <a href="" target="_self" 
                                                                                         class="btn btn-secondary">Contact</a>
                                                                                 </div>
                                                                             </div>
@@ -175,7 +183,7 @@
             </footer>
         </div>
 
-        <!--<div id="blog-sidebar" class="blog-sidebar hidden-sidebar">
+        <!-- <div id="blog-sidebar" class="blog-sidebar hidden-sidebar">
             <div class="sidebar-toggle">
                 <span></span>
                 <span></span>

@@ -38,7 +38,7 @@
 
                     <!-- Text Logo -->
                     <div class="text-logo">
-                        <a href="index.php\">
+                        <a href="index.php">
                             <div class="logo-symbol">P</div>
                             <div class="logo-text">Portfoilio<span>.</span></div>
                         </a>
@@ -51,7 +51,7 @@
                         <ul id="menu-classic-menu" class="leven-classic-menu site-main-menu">
                             <li id="menu-item-174"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
-                                <a href="#home" aria-current="page" data-hover="1">Home</a>
+                                <a href="index.php" aria-current="page" data-hover="1">Home</a>
                             </li>
                             <li id="menu-item-174"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
@@ -78,7 +78,6 @@
                 </div>
             </header>
             <!-- /Header -->
-            <!-- /Header -->
             <div id="main" class="site-main">
                 <div id="main-content" class="single-page-content">
                     <div id="primary" class="content-area">
@@ -94,36 +93,49 @@
 
 
                                                     <div class=" col-xs-12 col-sm-12 ">
-                                                        <div id="col_inner_58b532e81a0ac9bc82f24ba50266c83e" class="fw-col-inner" data-paddings="0px 0px 0px 0px">
+                                                        <div id="col_inner"
+                                                            class="fw-col-inner" data-paddings="0px 0px 0px 0px">
 
 
                                                             <!-- Portfolio Content -->
-                                                            <div id="portfolio_content_7730da50332b2005ddd6b098146a3670" class="portfolio-content" data-categories="3,9,8,7,4,6,5">
+                                                            <div id="portfolio_content" class="portfolio-content"
+                                                                data-categories="3,9,8,7,4,6,5">
 
                                                                 <ul class="portfolio-filters">
                                                                     <li class="active">
-                                                                        <a class="filter btn btn-sm btn-link" data-group="category_all">All</a>
+                                                                        <a class="filter btn btn-sm btn-link"
+                                                                            data-group="category_all">All</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a class="filter btn btn-sm btn-link" data-group="category_detailed">Detailed</a>
+                                                                        <a class="filter btn btn-sm btn-link"
+                                                                            data-group="category_detailed">Detailed</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a class="filter btn btn-sm btn-link" data-group="category_direct-url">Direct URL</a>
+                                                                        <a class="filter btn btn-sm btn-link"
+                                                                            data-group="category_direct-url">Direct
+                                                                            URL</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a class="filter btn btn-sm btn-link" data-group="category_image">Image</a>
+                                                                        <a class="filter btn btn-sm btn-link"
+                                                                            data-group="category_image">Image</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a class="filter btn btn-sm btn-link" data-group="category_soundcloud">SoundCloud</a>
+                                                                        <a class="filter btn btn-sm btn-link"
+                                                                            data-group="category_soundcloud">SoundCloud</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a class="filter btn btn-sm btn-link" data-group="category_video">Video</a>
+                                                                        <a class="filter btn btn-sm btn-link"
+                                                                            data-group="category_video">Video</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a class="filter btn btn-sm btn-link" data-group="category_vimeo-video">Vimeo Video</a>
+                                                                        <a class="filter btn btn-sm btn-link"
+                                                                            data-group="category_vimeo-video">Vimeo
+                                                                            Video</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a class="filter btn btn-sm btn-link" data-group="category_youtube-video">YouTube Video</a>
+                                                                        <a class="filter btn btn-sm btn-link"
+                                                                            data-group="category_youtube-video">YouTube
+                                                                            Video</a>
                                                                     </li>
                                                                 </ul>
 
@@ -131,14 +143,19 @@
                                                                 <!-- Portfolio Grid -->
                                                                 <div class="portfolio-grid three-columns">
 
-                                                                    <!-- Portfolio Item 73 -->
-                                                                    <figure class="item standard" data-groups='["category_all", &quot;category_detailed&quot;]'>
+                                                                    <!-- Portfolio Item -->
+                                                                    <figure class="item standard"
+                                                                        data-groups='["category_all", &quot;category_detailed&quot;]'>
                                                                         <div class="portfolio-item-img">
-                                                                            <img width="1280" height="853" src="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/12.jpg" class="attachment-portfolio-image-three-c size-portfolio-image-three-c wp-post-image" alt="Full Project 2" decoding="async" title=""
-                                                                                srcset="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/12.jpg 1280w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/12-300x200.jpg 300w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/12-1024x682.jpg 1024w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/12-768x512.jpg 768w"
+                                                                            <img width="1280" height="853"
+                                                                                src="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/12.jpg"
+                                                                                class="attachment-portfolio-image-three-c size-portfolio-image-three-c wp-post-image"
+                                                                                alt="Full Project 2" decoding="async"
+                                                                                title=""
                                                                                 sizes="(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 25vw" />
 
-                                                                            <a href="https://lmpixels.com/wp/leven-wp/full-width/project/full-project-2/" class="ajax-page-load"></a>
+                                                                            <a href="details.php"
+                                                                                ></a>
                                                                             <!-- /Image -->
                                                                         </div>
 
@@ -148,149 +165,7 @@
                                                                         <h4 class="name">Full Project 2</h4>
                                                                         <span class="category">Detailed</span>
                                                                     </figure>
-                                                                    <!-- /Portfolio Item 73 -->
-                                                                    <!-- Portfolio Item 79 -->
-                                                                    <figure class="item lbvideo" data-groups='["category_all", &quot;category_video&quot;, &quot;category_youtube-video&quot;]'>
-                                                                        <div class="portfolio-item-img">
-                                                                            <img width="1280" height="852" src="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/7.jpg" class="attachment-portfolio-image-three-c size-portfolio-image-three-c wp-post-image" alt="YouTube Video 2" decoding="async" loading="lazy"
-                                                                                title="" srcset="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/7.jpg 1280w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/7-300x200.jpg 300w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/7-1024x682.jpg 1024w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/7-768x511.jpg 768w"
-                                                                                sizes="(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 25vw" />
-
-                                                                            <a href="https://www.youtube.com/embed/F-1weFCiYBA" class="lightbox mfp-iframe" title="YouTube Video 2"></a>
-                                                                            <!-- /Image -->
-                                                                        </div>
-
-                                                                        <i class="fa fa-video-camera"></i>
-
-
-                                                                        <h4 class="name">YouTube Video 2</h4>
-                                                                        <span class="category">Video, YouTube Video</span>
-                                                                    </figure>
-                                                                    <!-- /Portfolio Item 79 -->
-                                                                    <!-- Portfolio Item 81 -->
-                                                                    <figure class="item lbimage" data-groups='["category_all", &quot;category_image&quot;]'>
-                                                                        <div class="portfolio-item-img">
-                                                                            <img width="1280" height="853" src="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/1.jpg" class="attachment-portfolio-image-three-c size-portfolio-image-three-c wp-post-image" alt="Image 2" decoding="async" loading="lazy"
-                                                                                title="" srcset="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/1.jpg 1280w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/1-300x200.jpg 300w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/1-1024x682.jpg 1024w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/1-768x512.jpg 768w"
-                                                                                sizes="(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 25vw" />
-                                                                            <a class="lightbox" data-lightbox-gallery="fancybox-item-81" title="Image 2" href="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/1.jpg"></a>
-                                                                            <!-- /Image -->
-                                                                        </div>
-
-                                                                        <i class="fa fa-image"></i>
-
-
-                                                                        <h4 class="name">Image 2</h4>
-                                                                        <span class="category">Image</span>
-                                                                    </figure>
-                                                                    <!-- /Portfolio Item 81 -->
-                                                                    <!-- Portfolio Item 67 -->
-                                                                    <figure class="item lbaudio" data-groups='["category_all", &quot;category_soundcloud&quot;]'>
-                                                                        <div class="portfolio-item-img">
-                                                                            <img width="1280" height="853" src="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/2.jpg" class="attachment-portfolio-image-three-c size-portfolio-image-three-c wp-post-image" alt="SoundCloud Audio 1" decoding="async" loading="lazy"
-                                                                                title="" srcset="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/2.jpg 1280w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/2-300x200.jpg 300w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/2-1024x682.jpg 1024w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/2-768x512.jpg 768w"
-                                                                                sizes="(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 25vw" />
-
-                                                                            <a href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221650664&#038;color=%23ff5500&#038;auto_play=false&#038;hide_related=false&#038;show_comments=true&#038;show_user=true&#038;show_reposts=false&#038;show_teaser=true&#038;visual=true"
-                                                                                class="lightbox mfp-iframe" title="SoundCloud Audio 1"></a>
-                                                                            <!-- /Image -->
-                                                                        </div>
-
-                                                                        <i class="fa fa-volume-up"></i>
-
-
-                                                                        <h4 class="name">SoundCloud Audio 1</h4>
-                                                                        <span class="category">SoundCloud</span>
-                                                                    </figure>
-                                                                    <!-- /Portfolio Item 67 -->
-                                                                    <!-- Portfolio Item 65 -->
-                                                                    <figure class="item lbvideo" data-groups='["category_all", &quot;category_video&quot;, &quot;category_vimeo-video&quot;]'>
-                                                                        <div class="portfolio-item-img">
-                                                                            <img width="1280" height="853" src="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/3.jpg" class="attachment-portfolio-image-three-c size-portfolio-image-three-c wp-post-image" alt="Vimeo Video" decoding="async" loading="lazy"
-                                                                                title="" srcset="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/3.jpg 1280w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/3-300x200.jpg 300w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/3-1024x682.jpg 1024w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/3-768x512.jpg 768w"
-                                                                                sizes="(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 25vw" />
-
-                                                                            <a href="https://player.vimeo.com/video/158284739" class="lightbox mfp-iframe" title="Vimeo Video"></a>
-                                                                            <!-- /Image -->
-                                                                        </div>
-
-                                                                        <i class="fa fa-video-camera"></i>
-
-
-                                                                        <h4 class="name">Vimeo Video</h4>
-                                                                        <span class="category">Video, Vimeo Video</span>
-                                                                    </figure>
-                                                                    <!-- /Portfolio Item 65 -->
-                                                                    <!-- Portfolio Item 63 -->
-                                                                    <figure class="item lbvideo" data-groups='["category_all", &quot;category_video&quot;, &quot;category_youtube-video&quot;]'>
-                                                                        <div class="portfolio-item-img">
-                                                                            <img width="1280" height="853" src="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/4-1.jpg" class="attachment-portfolio-image-three-c size-portfolio-image-three-c wp-post-image" alt="YouTube Video 1" decoding="async" loading="lazy"
-                                                                                title="" srcset="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/4-1.jpg 1280w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/4-1-300x200.jpg 300w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/4-1-1024x682.jpg 1024w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/4-1-768x512.jpg 768w"
-                                                                                sizes="(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 25vw" />
-
-                                                                            <a href="https://www.youtube.com/embed/ZK8REu-8pGw" class="lightbox mfp-iframe" title="YouTube Video 1"></a>
-                                                                            <!-- /Image -->
-                                                                        </div>
-
-                                                                        <i class="fa fa-video-camera"></i>
-
-
-                                                                        <h4 class="name">YouTube Video 1</h4>
-                                                                        <span class="category">Video, YouTube Video</span>
-                                                                    </figure>
-                                                                    <!-- /Portfolio Item 63 -->
-                                                                    <!-- Portfolio Item 43 -->
-                                                                    <figure class="item standard" data-groups='["category_all", &quot;category_detailed&quot;]'>
-                                                                        <div class="portfolio-item-img">
-                                                                            <img width="1280" height="853" src="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/5-1.jpg" class="attachment-portfolio-image-three-c size-portfolio-image-three-c wp-post-image" alt="Full Project 1" decoding="async" loading="lazy"
-                                                                                title="" srcset="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/5-1.jpg 1280w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/5-1-300x200.jpg 300w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/5-1-1024x682.jpg 1024w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/5-1-768x512.jpg 768w"
-                                                                                sizes="(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 25vw" />
-
-                                                                            <a href="https://lmpixels.com/wp/leven-wp/full-width/project/full-project-1/" class="ajax-page-load"></a>
-                                                                            <!-- /Image -->
-                                                                        </div>
-
-                                                                        <i class="fa fa-file-text-o"></i>
-
-
-                                                                        <h4 class="name">Full Project 1</h4>
-                                                                        <span class="category">Detailed</span>
-                                                                    </figure>
-                                                                    <!-- /Portfolio Item 43 -->
-                                                                    <!-- Portfolio Item 71 -->
-                                                                    <figure class="item direct" data-groups='["category_all", &quot;category_direct-url&quot;]'>
-                                                                        <div class="portfolio-item-img">
-                                                                            <img width="1280" height="853" src="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/6.jpg" class="attachment-portfolio-image-three-c size-portfolio-image-three-c wp-post-image" alt="Direct URL" decoding="async" loading="lazy"
-                                                                                title="" srcset="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/6.jpg 1280w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/6-300x200.jpg 300w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/6-1024x682.jpg 1024w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/6-768x512.jpg 768w"
-                                                                                sizes="(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 25vw" />
-                                                                            <a target="_blank" href="https://themeforest.net/user/lmpixels/portfolio"></a>
-                                                                            <!-- /Image -->
-                                                                        </div>
-
-                                                                        <i class="fa fa-link"></i>
-
-
-                                                                        <h4 class="name">Direct URL</h4>
-                                                                        <span class="category">Direct URL</span>
-                                                                    </figure>
-                                                                    <!-- /Portfolio Item 71 -->
-                                                                    <!-- Portfolio Item 69 -->
-                                                                    <figure class="item lbimage" data-groups='["category_all", &quot;category_image&quot;]'>
-                                                                        <div class="portfolio-item-img">
-                                                                            <img width="1280" height="853" src="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/9.jpg" class="attachment-portfolio-image-three-c size-portfolio-image-three-c wp-post-image" alt="Image 1" decoding="async" loading="lazy"
-                                                                                title="" srcset="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/9.jpg 1280w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/9-300x200.jpg 300w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/9-1024x682.jpg 1024w, https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/9-768x512.jpg 768w"
-                                                                                sizes="(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 25vw" />
-                                                                            <a class="lightbox" data-lightbox-gallery="fancybox-item-69" title="Image 1" href="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/9.jpg"></a>
-                                                                            <!-- /Image -->
-                                                                        </div>
-
-                                                                        <i class="fa fa-image"></i>
-
-
-                                                                        <h4 class="name">Image 1</h4>
-                                                                        <span class="category">Image</span>
-                                                                    </figure>
-                                                                    <!-- /Portfolio Item 69 -->
+                                                                    <!-- /Portfolio Item -->
                                                                 </div>
 
 
@@ -343,8 +218,7 @@
             </div>
             <div class="blog-sidebar-content clearfix">
                 <div class="sidebar-item">
-                    <form role="search" method="get" class="search-form"
-                        action="">
+                    <form role="search" method="get" class="search-form" action="">
                         <label>
                             <span class="screen-reader-text">Search for:</span>
                             <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
@@ -418,8 +292,7 @@
             </div>
         </div>
     </div>
-    <script type='text/javascript'
-        src='js/bootstrap.min.js' id='js-2-js'>
+    <script type='text/javascript' src='js/bootstrap.min.js' id='js-2-js'>
     </script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 

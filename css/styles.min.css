@@ -37648,7 +37648,9 @@ body {
         text-align: center
     }
 
-
+    .testimonial-text p {
+        font-size: 16px;
+    }
 
 }
 
@@ -37659,6 +37661,10 @@ body {
 
     .home-content {
         margin: 45% 0%;
+    }
+
+    .testimonial-text p {
+        font-size: 12px;
     }
 
 }
@@ -37689,7 +37695,20 @@ body {
     }
 
     .home .subtitle {
-        font-size: 14px;
+        font-size: 12px;
+    }
+    .testimonial-text p {
+        font-size: 12px;
+    }
+
+    .testimonial-item {
+        padding: 10px;
+        margin-bottom: 10px
+    }
+
+    .testimonial-content {
+
+        padding: 10px 10px 10px 20px;
     }
 }
 
@@ -37761,7 +37780,7 @@ body {
 
 .testimonial-author {
     margin: 0 0 2px;
-    font-size: .9em
+    font-size: 1rem
 }
 
 .testimonial-firm {
