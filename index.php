@@ -8,8 +8,10 @@
     <link rel='stylesheet' id='leven-google-fonts-css'
         href='https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic'
         type='text/css' media='all' />
-    <link rel='stylesheet' id='css-0-css' href='css/styles.min.css' type='text/css' media='all' />
-
+    <link rel='stylesheet' href='css/styles.min.css'/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type='text/javascript' src='js/jquery.min.js'></script>
 </head>
 
@@ -60,10 +62,6 @@
                             <li 
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
                                 <a href="portfolio.php" aria-current="page" data-hover="1">Portfolio</a>
-                            </li>
-                            <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
-                                <a href="blog.php" aria-current="page" data-hover="1">Blog</a>
                             </li>
                             <li 
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item current-menu-item">
@@ -182,91 +180,8 @@
                 </div>
             </footer>
         </div>
-
-        <!-- <div id="blog-sidebar" class="blog-sidebar hidden-sidebar">
-            <div class="sidebar-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="blog-sidebar-content clearfix">
-                <div class="sidebar-item">
-                    <form role="search" method="get" class="search-form"
-                        action="">
-                        <label>
-                            <span class="screen-reader-text">Search for:</span>
-                            <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
-                        </label>
-                        <input type="submit" class="search-submit" value="Search" />
-                    </form>
-                </div>
-                <div class="sidebar-item">
-                    <div class="sidebar-title">
-                        <h4>Recent Posts</h4>
-                    </div>
-                    <ul>
-                        <li>
-                            <a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/2019/12/04/how-to-make-a-wordpress-plugin-extensible/">How
-                                to Make a WordPress Plugin Extensible</a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/2019/12/04/6-easy-steps-to-better-icon-design/">6
-                                Easy Steps to Better Icon Design</a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/2019/12/04/creative-and-innovative-navigation-designs/">Creative
-                                and Innovative Navigation Designs</a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/2019/12/04/why-i-switched-to-sketch-for-ui-design/">Why
-                                I Switched to Sketch For UI Design</a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/2019/12/04/an-overview-of-e-commerce-platforms/">An
-                                Overview of E-Commerce Platforms</a>
-                        </li>
-                    </ul>
-
-                </div>
-                <div class="sidebar-item">
-                    <div class="sidebar-title">
-                        <h4>Recent Comments</h4>
-                    </div>
-                    <ul id="recentcomments"></ul>
-                </div>
-                <div class="sidebar-item">
-                    <div class="sidebar-title">
-                        <h4>Categories</h4>
-                    </div>
-                    <ul>
-                        <li class="cat-item cat-item-22"><a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/category/design/">Design</a>
-                        </li>
-                        <li class="cat-item cat-item-10"><a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/category/e-commerce/">E-Commerce</a>
-                        </li>
-                        <li class="cat-item cat-item-16"><a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/category/ui/">UI</a>
-                        </li>
-                        <li class="cat-item cat-item-1"><a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/category/uncategorized/">Uncategorized</a>
-                        </li>
-                        <li class="cat-item cat-item-31"><a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/category/wordpress/">WordPress</a>
-                        </li>
-                    </ul>
-
-                </div>
-
-            </div>
-        </div>-->
     </div>
-    <script type='text/javascript' src='js/bootstrap.min.js' id='js-2-js'>
+    <script type='text/javascript' src='js/bootstrap.min.js'>
     </script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 

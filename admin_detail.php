@@ -441,56 +441,154 @@ if(isset($_POST['submit_feature'])){
                                     <div class="fw-page-builder-content">
                                         <section class="fw-main-row ">
                                             <div class="container">
-                                                <div class="row">
-                                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                                        <p class="login-text"
-                                                            style="font-size: 1.5rem; font-weight: 800;">
-                                                            Add Category</p>
-                                                        <div class="alert alert-<?php echo $cls;?>">
-                                                            <?php 
-                                                                if (isset($_POST['submit_category'])){
-                                                                    echo $error;
-                                                                }
-                                                            ?>
+
+                                                <div class="row" style="margin-top: 5%">
+                                                    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+
+                                                        <div>
+                                                            <p class="login-text"
+                                                                style="font-size: 1.5rem; font-weight: 800; margin-top:5%;">
+                                                                Add Project Image</p>
+
+                                                            <form action="" method="post" enctype='multipart/form-data'>
+                                                                <div class="alert alert-<?php echo $cls;?>">
+                                                                    <?php 
+                                                                        if (isset($_POST['submit_project_img'])){
+                                                                            echo $error;
+                                                                        }
+                                                                    ?>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Select Project</label>
+                                                                    <select class="form-control" id="project_id"
+                                                                        name="project_id" required>
+                                                                        <option>-- Select Project --</option>
+                                                                        <?php
+                                                                        $br_option = "SELECT * FROM project";
+                                                                        $br_option_run = mysqli_query($conn, $br_option);
+
+                                                                        if (mysqli_num_rows($br_option_run) > 0) {
+                                                                            foreach ($br_option_run as $row2) {
+                                                                    ?>
+                                                                        <option
+                                                                            value="<?php echo $row2['project_id']; ?>">
+                                                                            <?php echo $row2['project_name']; ?>
+                                                                        </option>
+                                                                        <?php
+                                                                            }
+                                                                        }
+                                                                    ?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Project Image</label>
+                                                                    <input type="file" name="file" id="file"
+                                                                        class="form-control">
+                                                                </div>
+                                                                <button name="submit_project_img"
+                                                                    class="btn btn-primary">Add
+                                                                    Project Image</button>
+                                                            </form>
                                                         </div>
-                                                        <form action="" method="post" enctype='multipart/form-data'>
 
-                                                            <div class="form-group">
-                                                                <label>Category Name</label>
-                                                                <input type="text" class="form-control"
-                                                                    name="category_name" id="category_name"
-                                                                    placeholder="Category Name">
-                                                            </div>
-
-                                                            <button name="submit_category" class="btn btn-primary">Add
-                                                                Category</button>
-                                                        </form>
                                                     </div>
-                                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                                    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                                                        <div>
+                                                            <p class="login-text"
+                                                                style="font-size: 1.5rem; font-weight: 800;">
+                                                                Add Project Description</p>
+
+                                                            <form action="" method="post" enctype='multipart/form-data'>
+                                                                <div class="alert alert-<?php echo $cls;?>">
+                                                                    <?php 
+                                                                        if (isset($_POST['submit_project_img'])){
+                                                                            echo $error;
+                                                                        }
+                                                                    ?>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Select Project</label>
+                                                                    <select class="form-control" id="project_id"
+                                                                        name="project_id" required>
+                                                                        <option>-- Select Project --</option>
+                                                                        <?php
+                                                                            $br_option = "SELECT * FROM project";
+                                                                            $br_option_run = mysqli_query($conn, $br_option);
+
+                                                                            if (mysqli_num_rows($br_option_run) > 0) {
+                                                                                foreach ($br_option_run as $row2) {
+                                                                        ?>
+                                                                        <option
+                                                                            value="<?php echo $row2['project_id']; ?>">
+                                                                            <?php echo $row2['project_name']; ?>
+                                                                        </option>
+                                                                        <?php
+                                                                                }
+                                                                            }
+                                                                        ?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Description</label>
+                                                                    <textarea class="form-control" name="description"
+                                                                        id="description" placeholder="Description"
+                                                                        rows="12"></textarea>
+
+                                                                </div>
+                                                                <button name="submit_project_description"
+                                                                    class="btn btn-primary">Add
+                                                                    Project Description</button>
+                                                            </form>
+
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+
                                                         <p class="login-text"
-                                                            style="font-size: 1.5rem; font-weight: 800;">
-                                                            Add Technology</p>
+                                                            style="font-size: 1.5rem; font-weight: 800; margin-top:5%;">
+                                                            Add Features</p>
                                                         <div class="alert alert-<?php echo $cls;?>">
                                                             <?php 
-                                                                if (isset($_POST['submit_tech'])){
+                                                                if (isset($_POST['submit_feature'])){
                                                                     echo $error;
                                                                 }
                                                             ?>
                                                         </div>
                                                         <form action="" method="post" enctype='multipart/form-data'>
-
                                                             <div class="form-group">
-                                                                <label>Technology Name</label>
-                                                                <input type="text" class="form-control" name="tech_name"
-                                                                    id="tech_name" placeholder="Technology Name">
+                                                                <label>Select Project</label>
+                                                                <select class="form-control" id="project_id"
+                                                                    name="project_id" required>
+                                                                    <?php
+                                                                        $br_option = "SELECT * FROM project";
+                                                                        $br_option_run = mysqli_query($conn, $br_option);
+
+                                                                        if (mysqli_num_rows($br_option_run) > 0) {
+                                                                            foreach ($br_option_run as $row2) {
+                                                                    ?>
+                                                                    <option value="<?php echo $row2['project_id']; ?>">
+                                                                        <?php echo $row2['project_name']; ?>
+                                                                    </option>
+                                                                    <?php
+                                                                            }
+                                                                        }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Feature Name</label>
+                                                                <input type="text" class="form-control"
+                                                                    name="feature_name" id="feature_name"
+                                                                    placeholder="Feature Name">
                                                             </div>
 
-                                                            <button name="submit_tech" class="btn btn-primary">Add
-                                                                Technology</button>
+                                                            <button name="submit_feature" class="btn btn-primary">Add
+                                                                Feature</button>
                                                         </form>
                                                     </div>
                                                 </div>
-
 
                                             </div>
                                         </section>

@@ -1,3 +1,14 @@
+<?php 
+include_once("./database/config.php");
+
+
+function encodeNumber($number) {
+    $encodedString = base64_encode($number);
+    return strrev($encodedString);
+}
+  
+
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -9,7 +20,9 @@
         href='https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic'
         type='text/css' media='all' />
     <link rel='stylesheet' id='css-0-css' href='css/styles.min.css' type='text/css' media='all' />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type='text/javascript' src='js/jquery.min.js'></script>
 </head>
 
@@ -61,10 +74,7 @@
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
                                 <a href="portfolio.php" aria-current="page" data-hover="1">Portfolio</a>
                             </li>
-                            <li id="menu-item-174"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
-                                <a href="blog.php" aria-current="page" data-hover="1">Blog</a>
-                            </li>
+
                             <li id="menu-item-174"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
                                 <a href="contact.php" aria-current="page" data-hover="1">Contact</a>
@@ -93,8 +103,8 @@
 
 
                                                     <div class=" col-xs-12 col-sm-12 ">
-                                                        <div id="col_inner"
-                                                            class="fw-col-inner" data-paddings="0px 0px 0px 0px">
+                                                        <div id="col_inner" class="fw-col-inner"
+                                                            data-paddings="0px 0px 0px 0px">
 
 
                                                             <!-- Portfolio Content -->
@@ -106,65 +116,74 @@
                                                                         <a class="filter btn btn-sm btn-link"
                                                                             data-group="category_all">All</a>
                                                                     </li>
+                                                                    <?php 
+                                                                        $sql = "SELECT * FROM `category`";
+                                                                            $result = mysqli_query($conn, $sql);
+                                                                            if($result){
+                                                                                while($row=mysqli_fetch_assoc($result)){
+                                                                                $category_id=$row['category_id'];
+
+                                                                                $category_name=$row['category_name'];
+
+                                                                    ?>
                                                                     <li>
                                                                         <a class="filter btn btn-sm btn-link"
-                                                                            data-group="category_detailed">Detailed</a>
+                                                                            data-group="category_<?php echo $category_name?>"><?php echo $category_name?></a>
                                                                     </li>
-                                                                    <li>
-                                                                        <a class="filter btn btn-sm btn-link"
-                                                                            data-group="category_direct-url">Direct
-                                                                            URL</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a class="filter btn btn-sm btn-link"
-                                                                            data-group="category_image">Image</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a class="filter btn btn-sm btn-link"
-                                                                            data-group="category_soundcloud">SoundCloud</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a class="filter btn btn-sm btn-link"
-                                                                            data-group="category_video">Video</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a class="filter btn btn-sm btn-link"
-                                                                            data-group="category_vimeo-video">Vimeo
-                                                                            Video</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a class="filter btn btn-sm btn-link"
-                                                                            data-group="category_youtube-video">YouTube
-                                                                            Video</a>
-                                                                    </li>
+                                                                    <?php 
+                                                                                }
+                                                                            }
+                                                                    ?>
                                                                 </ul>
 
 
                                                                 <!-- Portfolio Grid -->
                                                                 <div class="portfolio-grid three-columns">
+                                                                    <?php 
+                                                                        $sql = "SELECT * FROM `project`";
+                                                                            $result = mysqli_query($conn, $sql);
+                                                                            if($result){
+                                                                                while($row=mysqli_fetch_assoc($result)){
+                                                                                $project_id=$row['project_id'];
+                                                                                $category_id=$row['category_id'];
 
+                                                                                $project_img=$row['project_img'];
+                                                                                $project_name=$row['project_name'];
+
+                                                                                $encoded = encodeNumber($project_id);
+
+                                                                                $sql2 = "SELECT * FROM `category` where category_id=$category_id";
+                                                                                $result2 = mysqli_query($conn, $sql2);
+                                                                                $row2=mysqli_fetch_assoc($result2);
+                                                                                $category_name=$row2['category_name'];
+
+
+                                                                    ?>
                                                                     <!-- Portfolio Item -->
                                                                     <figure class="item standard"
-                                                                        data-groups='["category_all", &quot;category_detailed&quot;]'>
+                                                                        data-groups='["category_all", &quot;category_<?php echo $category_name?>&quot;]'>
                                                                         <div class="portfolio-item-img">
                                                                             <img width="1280" height="853"
-                                                                                src="https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/12.jpg"
+                                                                                style="filter: brightness(90%)"
+                                                                                src="./project/<?php echo $project_img?>"
                                                                                 class="attachment-portfolio-image-three-c size-portfolio-image-three-c wp-post-image"
-                                                                                alt="Full Project 2" decoding="async"
-                                                                                title=""
-                                                                                sizes="(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 25vw" />
+                                                                                alt="<?php echo $project_name?>"
+                                                                                decoding="async" title=""
+                                                                                sizes="(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 25vw," />
 
-                                                                            <a href="details.php"
-                                                                                ></a>
+                                                                            <a href="details.php?id=<?php echo $encoded?>"></a>
                                                                             <!-- /Image -->
                                                                         </div>
 
-                                                                        <i class="fa fa-file-text-o"></i>
 
-
-                                                                        <h4 class="name">Full Project 2</h4>
-                                                                        <span class="category">Detailed</span>
+                                                                        <h4 class="name"><?php echo $project_name?></h4>
+                                                                        <span
+                                                                            class="category"><?php echo $category_name?></span>
                                                                     </figure>
+                                                                    <?php 
+                                                                                }
+                                                                            }
+                                                                    ?>
                                                                     <!-- /Portfolio Item -->
                                                                 </div>
 
@@ -210,87 +229,7 @@
             </footer>
         </div>
 
-        <div id="blog-sidebar" class="blog-sidebar hidden-sidebar">
-            <div class="sidebar-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="blog-sidebar-content clearfix">
-                <div class="sidebar-item">
-                    <form role="search" method="get" class="search-form" action="">
-                        <label>
-                            <span class="screen-reader-text">Search for:</span>
-                            <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
-                        </label>
-                        <input type="submit" class="search-submit" value="Search" />
-                    </form>
-                </div>
-                <div class="sidebar-item">
-                    <div class="sidebar-title">
-                        <h4>Recent Posts</h4>
-                    </div>
-                    <ul>
-                        <li>
-                            <a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/2019/12/04/how-to-make-a-wordpress-plugin-extensible/">How
-                                to Make a WordPress Plugin Extensible</a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/2019/12/04/6-easy-steps-to-better-icon-design/">6
-                                Easy Steps to Better Icon Design</a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/2019/12/04/creative-and-innovative-navigation-designs/">Creative
-                                and Innovative Navigation Designs</a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/2019/12/04/why-i-switched-to-sketch-for-ui-design/">Why
-                                I Switched to Sketch For UI Design</a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/2019/12/04/an-overview-of-e-commerce-platforms/">An
-                                Overview of E-Commerce Platforms</a>
-                        </li>
-                    </ul>
 
-                </div>
-                <div class="sidebar-item">
-                    <div class="sidebar-title">
-                        <h4>Recent Comments</h4>
-                    </div>
-                    <ul id="recentcomments"></ul>
-                </div>
-                <div class="sidebar-item">
-                    <div class="sidebar-title">
-                        <h4>Categories</h4>
-                    </div>
-                    <ul>
-                        <li class="cat-item cat-item-22"><a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/category/design/">Design</a>
-                        </li>
-                        <li class="cat-item cat-item-10"><a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/category/e-commerce/">E-Commerce</a>
-                        </li>
-                        <li class="cat-item cat-item-16"><a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/category/ui/">UI</a>
-                        </li>
-                        <li class="cat-item cat-item-1"><a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/category/uncategorized/">Uncategorized</a>
-                        </li>
-                        <li class="cat-item cat-item-31"><a
-                                href="https://lmpixels.com/wp/leven-wp/full-width/category/wordpress/">WordPress</a>
-                        </li>
-                    </ul>
-
-                </div>
-
-            </div>
-        </div>
     </div>
     <script type='text/javascript' src='js/bootstrap.min.js' id='js-2-js'>
     </script>

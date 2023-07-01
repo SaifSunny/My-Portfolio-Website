@@ -441,56 +441,129 @@ if(isset($_POST['submit_feature'])){
                                     <div class="fw-page-builder-content">
                                         <section class="fw-main-row ">
                                             <div class="container">
+
                                                 <div class="row">
-                                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
                                                         <p class="login-text"
                                                             style="font-size: 1.5rem; font-weight: 800;">
-                                                            Add Category</p>
+                                                            Add Project</p>
                                                         <div class="alert alert-<?php echo $cls;?>">
                                                             <?php 
-                                                                if (isset($_POST['submit_category'])){
+                                                                if (isset($_POST['submit_project'])){
                                                                     echo $error;
                                                                 }
                                                             ?>
                                                         </div>
                                                         <form action="" method="post" enctype='multipart/form-data'>
-
                                                             <div class="form-group">
-                                                                <label>Category Name</label>
+                                                                <label>Project Image</label>
+                                                                <input type="file" name="file" id="file"
+                                                                    class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Project Title</label>
                                                                 <input type="text" class="form-control"
-                                                                    name="category_name" id="category_name"
-                                                                    placeholder="Category Name">
+                                                                    name="project_name" id="project_name"
+                                                                    placeholder="Project Title">
                                                             </div>
+                                                            <div class="form-group">
+                                                                <label>Project Subtitle</label>
+                                                                <input type="text" class="form-control"
+                                                                    name="project_subtitle" id="project_subtitle"
+                                                                    placeholder="Project Subtitle">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Category</label>
+                                                                <select class="form-control" id="category_id"
+                                                                    name="category_id" required>
+                                                                    <option>-- Select Category --</option>
+                                                                    <?php
+                                                                        $br_option = "SELECT * FROM category";
+                                                                        $br_option_run = mysqli_query($conn, $br_option);
 
-                                                            <button name="submit_category" class="btn btn-primary">Add
-                                                                Category</button>
+                                                                        if (mysqli_num_rows($br_option_run) > 0) {
+                                                                            foreach ($br_option_run as $row2) {
+                                                                    ?>
+                                                                    <option value="<?php echo $row2['category_id']; ?>">
+                                                                        <?php echo $row2['category_name']; ?> </option>
+                                                                    <?php
+                                                                            }
+                                                                        }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Project Link</label>
+                                                                <input type="text" class="form-control"
+                                                                    name="project_link" id="project_link"
+                                                                    placeholder="Project Link">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Project Demo</label>
+                                                                <input type="text" class="form-control"
+                                                                    name="project_demo" id="project_demo"
+                                                                    placeholder="Project Demo">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Date</label>
+                                                                <input type="text" class="form-control" name="date"
+                                                                    id="date" placeholder="Date">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Purpose</label>
+                                                                <input type="text" class="form-control" name="purpose"
+                                                                    id="purpose" placeholder="Purpose">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Short Description</label>
+                                                                <textarea class="form-control" name="short_description"
+                                                                    id="short_description"
+                                                                    placeholder="Short Description" rows="8"></textarea>
+
+                                                            </div>
+                                                            <button name="submit_project" class="btn btn-primary">Add
+                                                                Project</button>
                                                         </form>
                                                     </div>
                                                     <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
                                                         <p class="login-text"
                                                             style="font-size: 1.5rem; font-weight: 800;">
-                                                            Add Technology</p>
+                                                            Add Certificate</p>
                                                         <div class="alert alert-<?php echo $cls;?>">
                                                             <?php 
-                                                                if (isset($_POST['submit_tech'])){
+                                                                if (isset($_POST['submit_certificate'])){
                                                                     echo $error;
                                                                 }
                                                             ?>
                                                         </div>
                                                         <form action="" method="post" enctype='multipart/form-data'>
-
                                                             <div class="form-group">
-                                                                <label>Technology Name</label>
-                                                                <input type="text" class="form-control" name="tech_name"
-                                                                    id="tech_name" placeholder="Technology Name">
+                                                                <label>Cirtificate Image</label>
+                                                                <input type="file" name="file" id="file"
+                                                                    class="form-control">
                                                             </div>
-
-                                                            <button name="submit_tech" class="btn btn-primary">Add
-                                                                Technology</button>
+                                                            <div class="form-group">
+                                                                <label>Cirtificate Title</label>
+                                                                <input type="text" class="form-control" name="title"
+                                                                    id="title" placeholder="Cirtificate Title">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Credencial ID</label>
+                                                                <input type="text" class="form-control" name="cred_id"
+                                                                    id="cred_id" placeholder="Credencial ID">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Date</label>
+                                                                <input type="text" class="form-control" name="date"
+                                                                    id="date" placeholder="Date">
+                                                            </div>
+                                                            <button name="submit_certificate"
+                                                                class="btn btn-primary">Add Certificate</button>
                                                         </form>
-                                                    </div>
-                                                </div>
 
+                                                    </div>
+                                                   
+                                                </div>
 
                                             </div>
                                         </section>
