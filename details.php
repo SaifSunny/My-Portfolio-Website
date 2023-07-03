@@ -14,7 +14,6 @@ function decodeString($encodedString) {
     return base64_decode($reversedString);
 }
 
-
 $project_id = decodeString($encoded);
 
 $sql = "SELECT * FROM project WHERE project_id='$project_id'";
@@ -93,19 +92,19 @@ $category_name=$row2['category_name'];
                     <!-- Navigation -->
                     <div class="site-nav mobile-menu-hide">
                         <ul id="menu-classic-menu" class="leven-classic-menu site-main-menu">
-                            <li id="menu-item-174"
+                            <li
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
-                                <a href="#home" aria-current="page" data-hover="1">Home</a>
+                                <a href="index.php" aria-current="page" data-hover="1">Home</a>
                             </li>
-                            <li id="menu-item-174"
+                            <li
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
                                 <a href="resume.php" aria-current="page" data-hover="1">Resume</a>
                             </li>
-                            <li id="menu-item-174"
+                            <li
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
                                 <a href="portfolio.php" aria-current="page" data-hover="1">Portfolio</a>
                             </li>
-                            <li id="menu-item-174"
+                            <li
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
                                 <a href="contact.php" aria-current="page" data-hover="1">Contact</a>
                             </li>
@@ -231,19 +230,29 @@ $category_name=$row2['category_name'];
                                                         <li>
                                                             <p><i class="fa fa-user"></i> <?php echo $purpose?></p>
                                                         </li>
-
+                                                        <?php
+                                                        if (!empty($project_demo)) {
+                                                        ?>
                                                         <li>
                                                             <p><i class="fa fa-eye"></i> <a
                                                                     href="<?php echo $project_demo?>"
                                                                     target="_blank">Project Demo</a></p>
                                                         </li>
+                                                        <?php
+                                                        }
+                                                        ?>
 
+                                                        <?php
+                                                        if (!empty($project_link)) {
+                                                        ?>
                                                         <li>
-                                                            <p><i class="fa fa-github"></i> <a
+                                                            <p><i class="fa-brands fa-github"></i> <a
                                                                     href="<?php echo $project_link?>"
-                                                                    target="_blank">Project Link</a></p>
+                                                                    target="_blank">&nbsp;&nbsp;Project Demo</a></p>
                                                         </li>
-
+                                                        <?php
+                                                        }
+                                                        ?>
 
 
                                                     </ul>
@@ -256,21 +265,26 @@ $category_name=$row2['category_name'];
                                                             <h3>Technology</h3>
                                                         </div>
                                                         <ul class="tags">
-
-                                                            <li><a>CSS3</a></li>
-
-
-                                                            <li><a>Envato</a></li>
-
-
-                                                            <li><a>Creative</a></li>
-
-
-                                                            <li><a>HTML5</a></li>
+                                                        <?php 
+                                                            $sql = "SELECT * FROM project_tech WHERE project_id=$project_id";
+                                                            $result = mysqli_query($conn, $sql);
+                                                                if($result){
+                                                                    while($row=mysqli_fetch_assoc($result)){
+                                                                        $project_id=$row['project_id'];
+                                                                        $tech_id=$row['tech_id'];
 
 
-                                                            <li><a>PHP7</a></li>
+                                                                        $sql1 = "SELECT * FROM technology WHERE tech_id=$tech_id";
+                                                                        $result1 = mysqli_query($conn, $sql1);
+                                                                        $row1=mysqli_fetch_assoc($result1);
+                                                                        $tech_name=$row1['tech_name'];
 
+                                                                    ?>
+                                                            <li><a><?php echo $tech_name?></a></li>
+                                                        <?php
+                                                                    }
+                                                                }
+                                                        ?>
                                                         </ul>
                                                     </div>
                                                     <!-- /Tags -->
@@ -278,32 +292,24 @@ $category_name=$row2['category_name'];
                                                     <!-- Share Buttons -->
                                                     <div class="share-buttons">
                                                         <div class="block-title">
-                                                            <h3>Share</h3>
+                                                            <h3>Contacts</h3>
                                                         </div>
                                                         <div class="btn-group">
-                                                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://lmpixels.com/wp/leven-wp/full-width/project/full-project-2/"
-                                                                onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
-                                                                class="btn" target="_blank" title="Share on Facebook">
-                                                                <i class="fa fa-facebook"></i>
-                                                            </a>
-
-                                                            <a href="https://twitter.com/share?url=https://lmpixels.com/wp/leven-wp/full-width/project/full-project-2/"
-                                                                onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
-                                                                class="btn" target="_blank" title="Share on Twitter">
-                                                                <i class="fa fa-twitter"></i>
-                                                            </a>
-
-                                                            <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://lmpixels.com/wp/leven-wp/full-width/project/full-project-2/"
-                                                                onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+                                                            <a href="https://www.linkedin.com/in/saieef-sarower/" style="margin-right:10px"
                                                                 class="btn" title="Share on LinkedIn">
-                                                                <i class="fa fa-linkedin"></i>
+                                                                <i class="fa-brands fa-linkedin"></i>
+                                                            </a>
+                                                            <a href="https://www.facebook.com/saif.sunny23/" class="btn" style="margin-right:10px"
+                                                                target="_blank" title="">
+                                                                <i class="fa-brands fa-square-facebook"></i>
                                                             </a>
 
-                                                            <a href="http://www.digg.com/submit?url=https://lmpixels.com/wp/leven-wp/full-width/project/full-project-2/"
-                                                                onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
-                                                                class="btn" title="Share on Digg">
-                                                                <i class="fa fa-digg"></i>
+                                                            <a href="https://twitter.com/Saif_Sunny56" class="btn"
+                                                                target="_blank" title="">
+                                                                <i class="fa-brands fa-square-twitter"></i>
                                                             </a>
+
+
                                                         </div>
                                                     </div>
                                                     <!-- /Share Buttons -->

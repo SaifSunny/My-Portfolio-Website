@@ -371,7 +371,7 @@ include_once("./database/config.php");
                                                         <div class="timeline clearfix">
                                                             <div class="timeline-item clearfix">
                                                                 <h5 class="item-period "> February 2022 - October
-                                                                    202</h5><br>
+                                                                    2022</h5><br>
                                                                 <h4 class="item-title">Teachers Assistant</h4>
                                                                 <span class="item-company"
                                                                     style="margin-top:0; padding-top:0;">University

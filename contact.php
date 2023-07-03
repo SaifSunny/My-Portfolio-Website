@@ -94,7 +94,7 @@
                                                     <div class=" col-xs-12 col-sm-12 ">
                                                         <div class="fw-col-inner" data-paddings="0px 0px 0px 0px">
                                                             <div class="lmpixels-map">
-                                                                <iframe 
+                                                                <iframe
                                                                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d228.2151724982138!2d90.36192596107144!3d23.767242825969003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1687612160995!5m2!1sen!2sbd"
                                                                     title="3/11 A Block-F Kaderia Madrasa Road, Mohammadpur Dhaka-1207"
                                                                     aria-label="3/11 A Block-F Kaderia Madrasa Road, Mohammadpur Dhaka-1207"></iframe>
@@ -167,62 +167,55 @@
                                                                 <h2>How Can I Help You?</h2>
                                                             </div>
 
-                                                            <form id="contact_form" class="contact-form" action="#"
-                                                                method="post">
-
-                                                                <div class="messages"></div>
+                                                            <form class="contact-form" action="https://formsubmit.co/60a801e11d5dd33407f70a4775967f38" method="POST">
 
                                                                 <div class="controls two-columns">
                                                                     <div class="fields clearfix">
                                                                         <div class="left-column">
                                                                             <div
                                                                                 class="form-group form-group-with-icon">
-                                                                                <input type="text" name="name"
-                                                                                    class="form-control"
-                                                                                    placeholder="Full Name"
-                                                                                    required="required"
-                                                                                    data-error="Name is required.">
-                                                                                <div class="form-control-border"></div>
-                                                                              
+                                                                                <input id="form_name" type="text"
+                                                                                    name="name" class="form-control"
+                                                                                    id="name" placeholder="Full Name"
+                                                                                    required>
+
                                                                             </div>
 
                                                                             <div
                                                                                 class="form-group form-group-with-icon">
                                                                                 <input id="form_email" type="email"
                                                                                     name="email" class="form-control"
+                                                                                    id="email"
                                                                                     placeholder="Email Address"
-                                                                                    required="required"
-                                                                                    data-error="Valid email is required.">
-                                                                                <div class="form-control-border"></div>
-                                                                                
+                                                                                    required>
+
                                                                             </div>
 
                                                                             <div
                                                                                 class="form-group form-group-with-icon">
-                                                                                <input type="text" name="subject"
-                                                                                    class="form-control"
-                                                                                    placeholder="Subject"
-                                                                                    required="required"
-                                                                                    data-error="Subject is required.">
-                                                                                <div class="form-control-border"></div>
-                                                                                
+                                                                                <input id="form_name" type="text"
+                                                                                    name="subject" class="form-control"
+                                                                                    id="subject" placeholder="Subject"
+                                                                                    required>
+
                                                                             </div>
                                                                         </div>
+                                                                        <input type="hidden" name="_next" value="http://localhost/portfolio/confirm.php">
+                                                                        <input type="hidden" name="_captcha" value="false">
                                                                         <div class="right-column">
                                                                             <div
                                                                                 class="form-group form-group-with-icon">
                                                                                 <textarea id="form_message"
                                                                                     name="message" class="form-control"
-                                                                                    placeholder="Message" rows="7"
-                                                                                    required="required"
-                                                                                    data-error="Please, leave me a message."></textarea>
-                                                                                <div class="form-control-border"></div>
-                                                                                
+                                                                                    placeholder="Message" id="message"
+                                                                                    rows="7"></textarea>
+
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <input type="submit" class="button btn-send"
-                                                                        value="Send message">
+
+                                                                    <input type="submit" name="submit"
+                                                                        class="button btn-send" value="Send message">
                                                                 </div>
                                                             </form>
 
@@ -245,7 +238,7 @@
                 <!-- #main-content -->
             </div>
 
-            <footer class="site-footer clearfix" style="margin-top:3%">
+            <footer class="site-footer clearfix">
                 <div class="footer-social">
                     <ul class="footer-social-links">
                         <li>
@@ -285,6 +278,7 @@
             </footer>
         </div>
 
+        </script>
         <script type='text/javascript' src='js/bootstrap.min.js'>
         </script>
         <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>

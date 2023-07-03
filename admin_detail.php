@@ -8,223 +8,6 @@ if (isset($_SESSION['email'])) {
     header("Location: login.php");
 }
 
-if(isset($_POST['submit_certificate'])){
-
-    $title = $_POST['title'];
-    $cred_id = $_POST['cred_id'];
-    $date = $_POST['date'];
- 
-    $name = $_FILES['file']['name'];
-    $target_dir = "certificate/";
-    $target_file = $target_dir . basename($_FILES["file"]["name"]);
-  
-    // Select file type
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-  
-    // Valid file extensions
-    $extensions_arr = array("jpg","jpeg","png","gif");
-
-
-        $query = "SELECT * FROM `certificate` WHERE img_link = '$name'";
-        $query_run = mysqli_query($conn, $query);
-        if (!$query_run->num_rows > 0) {
-
-            $query = "SELECT * FROM `certificate` WHERE title = '$title' AND cred_id = '$cred_id'";
-            $query_run = mysqli_query($conn, $query);
-            if(!$query_run->num_rows > 0){
-
-                // Check extension
-                if( in_array($imageFileType,$extensions_arr) ){
-
-                    // Upload file
-                    if(move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name)){
-
-                        // Convert to base64 
-                        $image_base64 = base64_encode(file_get_contents('certificate/'.$name));
-                        $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
-
-                        // Insert record
-
-                        $query2 = "INSERT INTO `certificate`(title,cred_id,`date`,img_link) VALUES ('$title', '$cred_id', '$date', '$name')";
-                        $query_run2 = mysqli_query($conn, $query2);
-            
-                        if ($query_run2) {
-                            $cls="success";
-                            $error = "Certificate Successfully Added.";
-                        } 
-                        else {
-                            $cls="danger";
-                            $error = mysqli_error($conn);
-                        }
-
-                    }else{
-                        $cls="danger";
-                        $error = 'Unknown Error Occurred.';
-                    }
-                }else{
-                    $cls="danger";
-                    $error = 'Invalid File Type';
-                }
-            }
-            else{
-                $cls="danger";
-                $error = "Certificate Already Exists";
-            }
-            
-        }else{
-            $cls="danger";
-            $error = "Please Change the Image Name";
-        }
-
-}
-
-
-if(isset($_POST['submit_category'])){
-
-    $category_name = $_POST['category_name'];
-    
-        $query = "SELECT * FROM category WHERE category_name = '$category_name'";
-        $query_run = mysqli_query($conn, $query);
-        if (!$query_run->num_rows > 0) {
-
-                        // Insert record
-
-                        $query2 = "INSERT INTO category(category_name)
-                        VALUES ('$category_name')";
-                        $query_run2 = mysqli_query($conn, $query2);
-            
-                        if ($query_run2) {
-                            $cls="success";
-                            $error = "Category Successfully Added.";
-                        } 
-                        else {
-                            $cls="danger";
-                            $error = mysqli_error($conn);
-                        }
-
-            
-        }else{
-            $cls="danger";
-            $error = "Category Already Exists";
-        }
-
-
-}
-
-if(isset($_POST['submit_tech'])){
-
-    $tech_name = $_POST['tech_name'];
-    
-        $query = "SELECT * FROM technology WHERE tech_name = '$tech_name'";
-        $query_run = mysqli_query($conn, $query);
-        if (!$query_run->num_rows > 0) {
-
-                        // Insert record
-
-                        $query2 = "INSERT INTO technology(tech_name)
-                        VALUES ('$tech_name')";
-                        $query_run2 = mysqli_query($conn, $query2);
-            
-                        if ($query_run2) {
-                            $cls="success";
-                            $error = "Technology Successfully Added.";
-                        } 
-                        else {
-                            $cls="danger";
-                            $error = mysqli_error($conn);
-                        }
-
-            
-        }else{
-            $cls="danger";
-            $error = "Technology Already Exists";
-        }
-
-
-}
-
-if(isset($_POST['submit_project'])){
-
-    $project_name = $_POST['project_name'];
-    $project_link = $_POST['project_link'];
-    $project_demo = $_POST['project_demo'];
-    $project_subtitle = $_POST['project_subtitle'];
-    $purpose = $_POST['purpose'];
-    $date = $_POST['date'];
-    $category_id = $_POST['category_id'];
-    $short_description = $_POST['short_description'];
- 
-    $name = $_FILES['file']['name'];
-    $target_dir = "project/";
-    $target_file = $target_dir . basename($_FILES["file"]["name"]);
-  
-    // Select file type
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-  
-    // Valid file extensions
-    $extensions_arr = array("jpg","jpeg","png","gif");
-
-
-        $query = "SELECT * FROM `project` WHERE project_img = '$name'";
-        $query_run = mysqli_query($conn, $query);
-        if (!$query_run->num_rows > 0) {
-
-            $query = "SELECT * FROM `project` WHERE project_name = '$project_name'";
-            $query_run = mysqli_query($conn, $query);
-            if(!$query_run->num_rows > 0){
-
-                $query = "SELECT * FROM `project` WHERE project_link = '$project_link'";
-                $query_run = mysqli_query($conn, $query);
-                if(!$query_run->num_rows > 0){
-                    // Check extension
-                    if( in_array($imageFileType,$extensions_arr) ){
-
-                        // Upload file
-                        if(move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name)){
-
-                            // Convert to base64 
-                            $image_base64 = base64_encode(file_get_contents('project/'.$name));
-                            $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
-
-                            // Insert record
-                            $query2 = "INSERT INTO `project`(category_id, project_img, project_name, project_subtitle, project_link, project_demo, `date`, purpose, short_description) 
-                            VALUES ('$category_id', '$name', '$project_name', '$project_subtitle', '$project_link', '$project_demo', '$date', '$purpose', '$short_description')";
-                            $query_run2 = mysqli_query($conn, $query2);
-                
-                            if ($query_run2) {
-                                $cls="success";
-                                $error = "Project Successfully Added.";
-                            } 
-                            else {
-                                $cls="danger";
-                                $error = mysqli_error($conn);
-                            }
-
-                        }else{
-                            $cls="danger";
-                            $error = 'Unknown Error Occurred.';
-                        }
-                    }else{
-                        $cls="danger";
-                        $error = 'Invalid File Type';
-                    }
-                }
-                else{
-                    $cls="danger";
-                    $error = "Project Link Exists";
-                }
-            }
-            else{
-                $cls="danger";
-                $error = "Project Already Exists";
-            }
-            
-        }else{
-            $cls="danger";
-            $error = "Please Change the Image Name";
-        }
-
-}
 
 if(isset($_POST['submit_project_img'])){
 
@@ -344,6 +127,39 @@ if(isset($_POST['submit_feature'])){
         }else{
             $cls="danger";
             $error = "Feature Already Exists";
+        }
+
+
+}
+
+if(isset($_POST['submit_project_tech'])){
+
+    $tech_id = $_POST['tech_id'];
+    $project_id = $_POST['project_id'];
+    
+        $query = "SELECT * FROM project_tech WHERE `tech_id` = '$tech_id' AND `project_id` = '$project_id'";
+        $query_run = mysqli_query($conn, $query);
+        if (!$query_run->num_rows > 0) {
+
+                        // Insert record
+
+                        $query2 = "INSERT INTO project_tech(project_id, `tech_id`)
+                        VALUES ('$project_id', '$tech_id')";
+                        $query_run2 = mysqli_query($conn, $query2);
+            
+                        if ($query_run2) {
+                            $cls="success";
+                            $error = "Technology Successfully Added.";
+                        } 
+                        else {
+                            $cls="danger";
+                            $error = mysqli_error($conn);
+                        }
+
+            
+        }else{
+            $cls="danger";
+            $error = "Technology Already Exists";
         }
 
 
@@ -501,7 +317,7 @@ if(isset($_POST['submit_feature'])){
                                                             <form action="" method="post" enctype='multipart/form-data'>
                                                                 <div class="alert alert-<?php echo $cls;?>">
                                                                     <?php 
-                                                                        if (isset($_POST['submit_project_img'])){
+                                                                        if (isset($_POST['submit_project_description'])){
                                                                             echo $error;
                                                                         }
                                                                     ?>
@@ -586,6 +402,63 @@ if(isset($_POST['submit_feature'])){
 
                                                             <button name="submit_feature" class="btn btn-primary">Add
                                                                 Feature</button>
+                                                        </form>
+
+
+                                                        <p class="login-text"
+                                                            style="font-size: 1.5rem; font-weight: 800; margin-top:5%;">
+                                                            Add Technology</p>
+                                                        <div class="alert alert-<?php echo $cls;?>">
+                                                            <?php 
+                                                                if (isset($_POST['submit_project_tech'])){
+                                                                    echo $error;
+                                                                }
+                                                            ?>
+                                                        </div>
+                                                        <form action="" method="post" enctype='multipart/form-data'>
+                                                            <div class="form-group">
+                                                                <label>Select Project</label>
+                                                                <select class="form-control" id="project_id"
+                                                                    name="project_id" required>
+                                                                    <?php
+                                                                        $br_option = "SELECT * FROM project";
+                                                                        $br_option_run = mysqli_query($conn, $br_option);
+
+                                                                        if (mysqli_num_rows($br_option_run) > 0) {
+                                                                            foreach ($br_option_run as $row2) {
+                                                                    ?>
+                                                                    <option value="<?php echo $row2['project_id']; ?>">
+                                                                        <?php echo $row2['project_name']; ?>
+                                                                    </option>
+                                                                    <?php
+                                                                            }
+                                                                        }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Select Technology</label>
+                                                                <select class="form-control" id="tech_id"
+                                                                    name="tech_id" required>
+                                                                    <?php
+                                                                        $br_option = "SELECT * FROM technology";
+                                                                        $br_option_run = mysqli_query($conn, $br_option);
+
+                                                                        if (mysqli_num_rows($br_option_run) > 0) {
+                                                                            foreach ($br_option_run as $row2) {
+                                                                    ?>
+                                                                    <option value="<?php echo $row2['tech_id']; ?>">
+                                                                        <?php echo $row2['tech_name']; ?>
+                                                                    </option>
+                                                                    <?php
+                                                                            }
+                                                                        }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+
+                                                            <button name="submit_project_tech" class="btn btn-primary">Add
+                                                                Project</button>
                                                         </form>
                                                     </div>
                                                 </div>

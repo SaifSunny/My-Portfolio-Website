@@ -8,7 +8,7 @@
     <link rel='stylesheet' id='leven-google-fonts-css'
         href='https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic'
         type='text/css' media='all' />
-    <link rel='stylesheet' href='css/styles.min.css'/>
+    <link rel='stylesheet' id='css-0-css' href='css/styles.min.css' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -32,7 +32,7 @@
     <!-- /Scroll To Top Button -->
 
     <div class="page-scroll">
-        <div id="page_container" class="page-container full-width-container theme-style-light" style="height:70vh;">
+        <div id="page_container" class="page-container full-width-container theme-style-light">
 
             <!-- Header -->
             <header id="site_header" class="header">
@@ -52,19 +52,20 @@
                     <div class="site-nav mobile-menu-hide">
                         <ul id="menu-classic-menu" class="leven-classic-menu site-main-menu">
                             <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item current-menu-item">
-                                <a href="#home" aria-current="page" data-hover="1">Home</a>
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
+                                <a href="index.php" aria-current="page" data-hover="1">Home</a>
                             </li>
-                            <li 
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item current-menu-item">
+                            <li
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
                                 <a href="resume.php" aria-current="page" data-hover="1">Resume</a>
                             </li>
-                            <li 
+                            <li
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
                                 <a href="portfolio.php" aria-current="page" data-hover="1">Portfolio</a>
                             </li>
-                            <li 
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item current-menu-item">
+
+                            <li
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174 current-menu-item">
                                 <a href="contact.php" aria-current="page" data-hover="1">Contact</a>
                             </li>
                         </ul>
@@ -96,26 +97,17 @@
                                                                 <div class="row flex-v-align">
 
 
-                                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                                    <div class="col-sm-12 col-md-12 col-lg-12">
                                                                         <div class="home-text hp-left">
 
                                                                             <div class="container">
 
-                                                                                <div class="glitch"
-                                                                                    style="margin-bottom:10px"
-                                                                                    data-glitch="I'M SAIF SUNNY">I'M
-                                                                                    SAIF SUNNY</div>
+                                                                                <div class="glitch" style="font-size: 50px;margin-bottom:10px"
+                                                                                    style=""><span class="con">Thank You for Your Message.</span></div>
 
                                                                                 <p><span class="subtitle"
-                                                                                        id="subtitle"></span>
+                                                                                        >I shall get back to you very soon.</span>
                                                                                 </p>
-                                                                                <div class="home-buttons">
-                                                                                    <a href="" target="_blank"
-                                                                                        class="btn btn-primary">Download
-                                                                                        CV</a>
-                                                                                    <a href="" target="_self" 
-                                                                                        class="btn btn-secondary">Contact</a>
-                                                                                </div>
                                                                             </div>
 
 
@@ -141,7 +133,8 @@
                 <!-- #main-content -->
             </div>
 
-            <footer class="site-footer clearfix">
+
+            <footer class="site-footer clearfix" style="margin-top:3%">
                 <div class="footer-social">
                     <ul class="footer-social-links">
                         <li>
@@ -180,21 +173,24 @@
                 </div>
             </footer>
         </div>
-    </div>
-    <script type='text/javascript' src='js/bootstrap.min.js'>
-    </script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
-    <script>
-        var typed = new Typed('#subtitle', {
-            strings: ['Full Stack Web Developer.', 'UI/UX Designer.', 'Android Developer.', 'Graphics Designer.',
-                'Machine Learning Engineer.'
-            ],
-            typeSpeed: 50,
-            backSpeed: 50,
-            loop: true
-        });
-    </script>
+        </script>
+        <script type='text/javascript' src='js/bootstrap.min.js'>
+        </script>
+        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+        <script>
+            var typed = new Typed('#subtitle', {
+                strings: ['Full Stack Web Developer.', 'UI/UX Designer.', 'Android Developer',
+                    'Graphics Designer',
+                    'Machine Learning Engineer.'
+                ],
+                typeSpeed: 50,
+                backSpeed: 50,
+                loop: true
+            });
+        </script>
+    </div>
 </body>
 
 </html>
