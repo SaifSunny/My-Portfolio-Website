@@ -21,7 +21,7 @@ The source code for the portfolio website is available on GitHub. You can find i
   
   **6. Contact Form:** Visitors can use the contact form on the website to send an email to the portfolio owner. The submitted messages will be sent to the email address.
 
-##Technologies Used
+## Technologies Used
 The portfolio website has been developed using the following technologies:
 
   **1. Bootstrap:** A popular front-end framework used for designing responsive and mobile-first websites.
@@ -34,7 +34,9 @@ The portfolio website has been developed using the following technologies:
   To set up the portfolio website locally, follow these steps:
   
   Clone the GitHub repository to your local machine using the following command:
+  
   ``` git clone https://github.com/SaifSunny/portfolio.git ```
+  
   Ensure you have PHP and MySQL installed on your machine. If not, install them accordingly.
   
   Create a new MySQL database and import the provided SQL file (database.sql) to set up the necessary database structure and tables.
