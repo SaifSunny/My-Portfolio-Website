@@ -1,3 +1,6 @@
+![5](https://github.com/SaifSunny/portfolio/assets/72490093/4f5fe864-fd13-41ba-908f-cf7aae1e4841)
+![Uploading 4.PNG…]()
+![Uploading 3.PNG…]()
 # My Personal Portfolio Website
 
 This is the README file for the portfolio website developed using Bootstrap, PHP, and MySQL. The website showcases projects, resume experiences, education, Coursera certificates, and co-curricular activities. It also includes a contact form that allows visitors to send an email to the owner's email address.
@@ -46,6 +49,9 @@ The portfolio website has been developed using the following technologies:
   Deploy the project to a web server capable of running PHP scripts.
   
   Access the portfolio website by navigating to the appropriate URL in your web browser.
+## Screenshot
+![Uploading 2.PNG…]()
+![Uploading 1.PNG…]()
 
 ## Contact
 If you have any questions or suggestions regarding the portfolio website, feel free to reach out to the portfolio owner at saifsunny56@gmail.com.
